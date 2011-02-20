@@ -5,7 +5,7 @@
 #############################################################
 LSOF_VERSION = 4.84
 LSOF_SOURCE = lsof_$(LSOF_VERSION).tar.bz2
-LSOF_SITE = ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/
+LSOF_SITE = ftp://gd.tuwien.ac.at/utils/admin-tools/lsof/
 
 BR2_LSOF_CFLAGS =
 ifeq ($(BR2_LARGEFILE),)
