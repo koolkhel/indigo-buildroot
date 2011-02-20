@@ -1,0 +1,10 @@
+config BR2_PACKAGE_DBUS_CXX
+	bool "dbus-cxx"
+	depends on BR2_PACKAGE_LIBSIGC
+	depends on BR2_PACKAGE_DBUS
+	depends on BR2_PACKAGE_POPT
+	help
+	  dbus bindings for c++ 
+
+	  http://www.freedesktop.org/wiki/Software/dbus
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+export CROSS_PREFIX=arm-indigo-linux-uclibcgnueabi-
+export SYSROOT=/home/yury/buildroot/output/staging
+export TOOLCHAINDIR=/home/yury/toolchain/arm-indigo-linux-uclibcgnueabi/bin
+export CC="arm-indigo-linux-uclibcgnueabi-gcc --sysroot $SYSROOT"
+export CXX="$TOOLCHAINDIR/($CROSS_PREFIX)gcc --sysroot $SYSROOT"
+export PKG_CONFIG_PATH=$SYSROOT/usr/lib/pkgconfig
+
+./configure --prefix=/usr/local/arm --host=arm-indigo-linux-uclibcgnueabi --disable-largefile --enable-debug
+make
+make install
+

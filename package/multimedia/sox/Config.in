@@ -1,0 +1,4 @@
+config BR2_PACKAGE_SOX
+	bool "sox"
+	help
+		indigo SOX
