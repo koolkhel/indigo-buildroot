@@ -7,7 +7,7 @@
 GPSD_VERSION = 2.95
 GPSD_SITE = http://download.berlios.de/gpsd
 GPSD_INSTALL_STAGING = YES
-GPSD_CONF_OPT = --disable-static
+GPSD_CONF_OPT = --disable-static --disable-ipv6
 GPSD_TARGET_BINS = cgps gpsctl gpsdecode gpsmon gpspipe gpxlogger lcdgps
 
 # Build libgpsmm if we've got C++
