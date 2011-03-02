@@ -13,4 +13,6 @@ DBUS_CXX_LIBTOOL_PATCH = NO
 
 DBUS_CXX_DEPENDENCIES= host-pkg-config dbus libsigc popt
 
+DBUS_CXX_CONF_ENV= CFLAGS="-D_REENTRANT $(TARGET_CFLAGS)"
+
 $(eval $(call AUTOTARGETS,package,dbus-cxx))

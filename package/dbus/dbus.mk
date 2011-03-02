@@ -11,7 +11,7 @@ DBUS_INSTALL_TARGET = YES
 
 DBUS_DEPENDENCIES = host-pkg-config
 
-DBUS_CONF_ENV = ac_cv_have_abstract_sockets=yes CFLAGS="$(TARGET_CFLAGS) -D_REENTRANT"
+DBUS_CONF_ENV = ac_cv_have_abstract_sockets=yes CFLAGS="-D_REENTRANT $(TARGET_CFLAGS)"
 DBUS_CONF_OPT = --program-prefix="" \
 		--with-dbus-user=dbus \
 		--disable-tests \
