@@ -3,7 +3,7 @@
 # dbus
 #
 #############################################################
-DBUS_VERSION = 1.2.26
+DBUS_VERSION = 1.4.6
 DBUS_SOURCE = dbus-$(DBUS_VERSION).tar.gz
 DBUS_SITE = http://dbus.freedesktop.org/releases/dbus/
 DBUS_INSTALL_STAGING = YES
@@ -14,8 +14,8 @@ DBUS_DEPENDENCIES = host-pkg-config
 DBUS_CONF_ENV = ac_cv_have_abstract_sockets=yes CFLAGS="-D_REENTRANT $(TARGET_CFLAGS)"
 DBUS_CONF_OPT = --program-prefix="" \
 		--with-dbus-user=dbus \
-		--disable-tests \
-		--disable-asserts \
+		--enable-tests \
+		--enable-asserts \
 		--enable-abstract-sockets \
 		--disable-selinux \
 		--disable-xml-docs \
