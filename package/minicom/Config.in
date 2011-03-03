@@ -1,0 +1,8 @@
+config BR2_PACKAGE_MINICOM
+	bool "minicom"
+	depends on BR2_PACKAGE_NCURSES
+	help
+	  minicom 
+
+	  http://www.freedesktop.org/wiki/Software/dbus
+
