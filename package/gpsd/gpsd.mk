@@ -7,12 +7,15 @@
 GPSD_VERSION = 2.95
 GPSD_SITE = http://download.berlios.de/gpsd
 GPSD_INSTALL_STAGING = YES
-GPSD_CONF_OPT = --disable-static --disable-ipv6
+GPSD_CONF_OPT = --disable-static --disable-ipv6 --disable-cheapfloats
 GPSD_TARGET_BINS = cgps gpsctl gpsdecode gpsmon gpspipe gpxlogger lcdgps
+
+#GPSD_CONF_OPT += CFLAGS="$(TARGET_CFLAGS) -pg -ggdb"
+
 
 # Build libgpsmm if we've got C++
 ifeq ($(BR2_INSTALL_LIBSTDCPP),y)
-	GPSD_CONF_OPT += --enable-libgpsmm LDFLAGS="$(TARGET_LDFLAGS) -lstdc++"
+	GPSD_CONF_OPT += --enable-libgpsmm LDFLAGS="$(TARGET_LDFLAGS) -lstdc++ -ggdb"
 else
 	GPSD_CONF_OPT += --disable-libgpsmm
 endif
@@ -31,10 +34,10 @@ ifeq ($(BR2_PACKAGE_LIBUSB),y)
 	GPSD_DEPENDENCIES += libusb
 endif
 
-ifeq ($(strip $(BR2_PACKAGE_DBUS)),y)
-	GPSD_CONF_OPT += --enable-dbus
-	GPSD_DEPENDENCIES += dbus dbus-glib
-endif
+#ifeq ($(strip $(BR2_PACKAGE_DBUS)),y)
+#	GPSD_CONF_OPT += --enable-dbus
+#	GPSD_DEPENDENCIES += dbus dbus-glib
+#endif
 
 ifeq ($(BR2_PACKAGE_NCURSES),y)
 	GPSD_DEPENDENCIES += ncurses
