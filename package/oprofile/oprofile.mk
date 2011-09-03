@@ -3,7 +3,7 @@
 # oprofile
 #
 #############################################################
-OPROFILE_VERSION := 0.9.4
+OPROFILE_VERSION := 0.9.6
 OPROFILE_CONF_OPT :=	--localstatedir=/var \
 			--with-kernel-support
 
@@ -21,7 +21,7 @@ ifeq ($(OPROFILE_ARCH),)
 OPROFILE_ARCH := $(BR2_ARCH)
 endif
 
-OPROFILE_DEPENDENCIES := popt binutils
+#OPROFILE_DEPENDENCIES := popt binutils
 
 define OPROFILE_INSTALL_TARGET_CMDS
 	$(INSTALL) -d -m 755 $(TARGET_DIR)/usr/bin

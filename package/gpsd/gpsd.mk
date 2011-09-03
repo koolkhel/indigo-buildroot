@@ -4,10 +4,11 @@
 #
 #############################################################
 
-GPSD_VERSION = 2.95
+GPSD_VERSION = 3.0
 GPSD_SITE = http://download.berlios.de/gpsd
 GPSD_INSTALL_STAGING = YES
-GPSD_CONF_OPT = --disable-static --disable-ipv6 --disable-cheapfloats
+GPSD_CONF_OPT = --disable-static --disable-ipv6
+#--disable-cheapfloats
 GPSD_TARGET_BINS = cgps gpsctl gpsdecode gpsmon gpspipe gpxlogger lcdgps
 
 #GPSD_CONF_OPT += CFLAGS="$(TARGET_CFLAGS) -pg -ggdb"

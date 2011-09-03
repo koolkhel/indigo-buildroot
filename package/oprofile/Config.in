@@ -3,10 +3,10 @@ config BR2_PACKAGE_OPROFILE
 	# The dependency on binutils_target does not work with
 	# external toolchains since the binutils version was not
 	# choosen in the config. This will have to be fixed later.
-	depends on !BR2_TOOLCHAIN_EXTERNAL
+#	depends on !BR2_TOOLCHAIN_EXTERNAL
 	select BR2_PACKAGE_POPT
-	select BR2_PACKAGE_BINUTILS
-	depends on BR2_INSTALL_LIBSTDCPP
+#	select BR2_PACKAGE_BINUTILS
+#	depends on BR2_INSTALL_LIBSTDCPP
 	help
 	  OProfile is a system-wide profiler for Linux systems,
 	  capable of profiling all running code at low overhead.
@@ -24,4 +24,4 @@ config BR2_PACKAGE_OPROFILE
 	  libraries, and applications.
 
 comment "oprofile requires a toolchain with C++ support enabled"
-	depends on !BR2_INSTALL_LIBSTDCPP
+#	depends on !BR2_INSTALL_LIBSTDCPP
