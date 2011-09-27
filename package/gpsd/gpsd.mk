@@ -4,7 +4,7 @@
 #
 #############################################################
 
-GPSD_VERSION = 3.0
+GPSD_VERSION = 2.95
 GPSD_SITE = http://download.berlios.de/gpsd
 GPSD_INSTALL_STAGING = YES
 GPSD_CONF_OPT = --disable-static --disable-ipv6
