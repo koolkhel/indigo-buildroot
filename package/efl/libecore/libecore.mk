@@ -4,7 +4,7 @@
 #
 #############################################################
 
-LIBECORE_VERSION = 1.1.0
+LIBECORE_VERSION = 1.2.1
 LIBECORE_SOURCE = ecore-$(LIBECORE_VERSION).tar.bz2
 LIBECORE_SITE = http://download.enlightenment.org/releases/
 LIBECORE_INSTALL_STAGING = YES
@@ -73,5 +73,5 @@ else
 LIBECORE_CONF_OPT += --disable-ecore-evas
 endif
 
-$(eval $(call AUTOTARGETS))
+$(eval $(call AUTOTARGETS,package,libecore))
 $(eval $(call AUTOTARGETS,host))
