@@ -13,4 +13,4 @@ LIBETHUMB_DEPENDENCIES = libeina libevas libecore libedje host-libedje
 
 LIBETHUMB_CONF_OPT = --with-edje-cc=$(HOST_DIR)/usr/bin/edje_cc
 
-$(eval $(call AUTOTARGETS))
+$(eval $(call AUTOTARGETS,package,libethumb))

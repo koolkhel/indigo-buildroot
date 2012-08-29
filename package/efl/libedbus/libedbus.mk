@@ -11,4 +11,4 @@ LIBEDBUS_INSTALL_STAGING = YES
 
 LIBEDBUS_DEPENDENCIES = host-pkg-config dbus libeina libecore
 
-$(eval $(call AUTOTARGETS))
+$(eval $(call AUTOTARGETS,package,libedbus))
