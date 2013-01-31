@@ -156,10 +156,8 @@ define LUA_CLEAN_CMDS
 endef
 
 $(eval $(call GENTARGETS,package,lua))
-=======
 define HOST_LUA_CLEAN_CMDS
 	-$(MAKE) -C $(@D) clean
 endef
 
-$(eval $(call GENTARGETS))
-$(eval $(call GENTARGETS,host))
+$(eval $(call GENTARGETS,package,lua,host))
