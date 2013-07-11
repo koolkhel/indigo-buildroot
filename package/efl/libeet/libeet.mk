@@ -11,5 +11,7 @@ LIBEET_INSTALL_STAGING = YES
 
 LIBEET_DEPENDENCIES = host-pkg-config zlib jpeg libeina host-libeina
 
+LIBEET_CONF_OPT = --disable-openssl --disable-gnutls
+
 $(eval $(call AUTOTARGETS,package,libeet))
 $(eval $(call AUTOTARGETS,pakcage,libeet,host))

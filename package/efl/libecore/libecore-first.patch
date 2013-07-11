@@ -1,0 +1,12 @@
+diff -ruN libecore-1.7.5-orig/src/lib/ecore_fb/ecore_fb_li.c libecore-1.7.5/src/lib/ecore_fb/ecore_fb_li.c
+--- libecore-1.7.5-orig/src/lib/ecore_fb/ecore_fb_li.c	2012-12-19 18:40:06.000000000 +0400
++++ libecore-1.7.5/src/lib/ecore_fb/ecore_fb_li.c	2013-03-04 20:20:30.980957061 +0400
+@@ -407,6 +407,8 @@
+    dev = (Ecore_Fb_Input_Device*)data;
+    /* read up to 64 events at once */
+    len = read(dev->fd, &ev, sizeof(ev));
++   if (len > sizeof(ev))
++   	len = sizeof(ev);
+    for(i = 0; i < (int)(len / sizeof(ev[0])); i++)
+      {
+         switch(ev[i].type)

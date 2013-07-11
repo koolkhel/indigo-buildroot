@@ -15,7 +15,7 @@ HOST_LIBECORE_DEPENDENCIES = host-pkg-config host-libeina host-libevas
 HOST_LIBECORE_CONF_OPT += --enable-ecore-evas
 
 # default options
-LIBECORE_CONF_OPT = --disable-simple-x11
+LIBECORE_CONF_OPT = --disable-simple-x11 --disable-openssl --disable-gnutls
 
 # libecore
 ifeq ($(BR2_PACKAGE_LIBECORE_DIRECTFB),y)
