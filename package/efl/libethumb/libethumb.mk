@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBETHUMB_VERSION = 1.7.5
+LIBETHUMB_VERSION = 1.7.7
 LIBETHUMB_SOURCE = ethumb-$(LIBETHUMB_VERSION).tar.bz2
 LIBETHUMB_SITE = http://download.enlightenment.org/snapshots/2011-11-28
 LIBETHUMB_INSTALL_STAGING = YES

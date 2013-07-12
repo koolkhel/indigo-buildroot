@@ -4,7 +4,7 @@
 #
 #############################################################
 
-LIBECORE_VERSION = 1.7.5
+LIBECORE_VERSION = 1.7.7
 LIBECORE_SOURCE = ecore-$(LIBECORE_VERSION).tar.bz2
 LIBECORE_SITE = http://download.enlightenment.org/releases/
 LIBECORE_INSTALL_STAGING = YES
@@ -15,7 +15,7 @@ HOST_LIBECORE_DEPENDENCIES = host-pkg-config host-libeina host-libevas
 HOST_LIBECORE_CONF_OPT += --enable-ecore-evas
 
 # default options
-LIBECORE_CONF_OPT = --disable-simple-x11 --disable-openssl --disable-gnutls
+LIBECORE_CONF_OPT = --disable-simple-x11 --disable-openssl --disable-gnutls --disable-glib
 
 # libecore
 ifeq ($(BR2_PACKAGE_LIBECORE_DIRECTFB),y)
