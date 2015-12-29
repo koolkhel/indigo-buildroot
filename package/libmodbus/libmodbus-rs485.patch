@@ -1,0 +1,44 @@
+diff -ruN libmodbus-3.0.3/src/modbus-rtu.c libmodbus-3.0.3-indigo/src/modbus-rtu.c
+--- libmodbus-3.0.3/src/modbus-rtu.c	2012-05-20 01:54:15.000000000 +0400
++++ libmodbus-3.0.3-indigo/src/modbus-rtu.c	2012-10-01 12:33:59.811611239 +0400
+@@ -36,6 +36,26 @@
+ #include <linux/serial.h>
+ #endif
+ 
++#ifndef SER_RS485_ENABLED
++#define SER_RS485_ENABLED               (1 << 0)        /* If enabled */
++#endif
++
++#ifndef SER_RS485_RTS_ON_SEND
++#define SER_RS485_RTS_ON_SEND           (1 << 1)        /* Logical level for
++							   RTS pin when
++							   sending */
++#endif
++
++#ifndef SER_RS485_RTS_AFTER_SEND
++#define SER_RS485_RTS_AFTER_SEND        (1 << 2)        /* Logical level for
++							   RTS pin after sent*/
++#endif
++
++#ifndef SER_RS485_RX_DURING_TX
++#define SER_RS485_RX_DURING_TX          (1 << 4)
++#endif
++
++
+ /* Table of CRC values for high-order byte */
+ static const uint8_t table_crc_hi[] = {
+     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0,
+@@ -723,6 +743,13 @@
+         modbus_rtu_t *ctx_rtu = ctx->backend_data;
+         struct serial_rs485 rs485conf;
+         memset(&rs485conf, 0x0, sizeof(struct serial_rs485));
++        rs485conf.flags |= SER_RS485_RTS_ON_SEND;
++        rs485conf.flags &= ~(SER_RS485_RTS_AFTER_SEND);
++        rs485conf.delay_rts_before_send = 5;
++        rs485conf.delay_rts_after_send = 5;
++
++        rs485conf.flags |= SER_RS485_RX_DURING_TX;
++
+ 
+         if (mode == MODBUS_RTU_RS485) {
+             rs485conf.flags = SER_RS485_ENABLED;
